@@ -25,5 +25,5 @@ sudo ./base_check.sh
 sudo ./reference_data.sh
 
 # References
-1. Lynch et al. 2012
-2. Lynch and Neufeld in review
+1. Lynch et al. 2012. Targeted recovery of novel phylogenetic diversity from next-generation sequence data. ISME J. 6:2067–2077 doi:10.1038/ismej.2012.50
+2. Lynch, MDJ and JD Neufeld. Automated exploration of microbiology’s most wanted in global high-throughput sequence data (in review)
