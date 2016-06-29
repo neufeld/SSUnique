@@ -17,9 +17,13 @@ SSUnique relies on several pieces of software and reference data for basic funct
 # Installation
 SSUnique dependencies and reference data can be installed/checked manually or using the install script:
 
+## Dependencies
+
 sudo ./base_check.sh
-./reference_data.sh
+
+## Reference Data
+sudo ./reference_data.sh
 
 # References
-Lynch et al. 2012
-Lynch and Neufeld in review
+1. Lynch et al. 2012
+2. Lynch and Neufeld in review
