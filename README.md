@@ -17,16 +17,16 @@ SSUnique relies on several pieces of software and reference data for basic funct
 # Installation
 SSUnique dependencies and reference data can be installed/checked manually or using the install scripts:
 
-## Dependencies
+### Dependencies
 
 sudo ./base_check.sh
 
-## Reference Data
+### Reference Data
 sudo ./reference_data.sh
 
 # Manual
 
-A brief manual, including a sample workflow, can be found:
+A sample workflow, including test data, can be found at the Wiki link above.
 
 # References
 1. Lynch et al. 2012. Targeted recovery of novel phylogenetic diversity from next-generation sequence data. ISME J. 6:2067–2077 doi:10.1038/ismej.2012.50
