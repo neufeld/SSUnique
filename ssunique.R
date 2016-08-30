@@ -56,7 +56,7 @@ metadata_mapping  <- read.table(METADATA, header = TRUE, sep = "\t", comment.cha
 print("done loading mapping file")
 # TODO: is this subsetting required? Not generally, but for EMP subsets, yes.
 #metadata_mapping <- metadata_mapping[which(tolower(metadata_mapping$ENV_BIOME) == "envo:tropical and subtropical moist broadleaf forest biome"),]
-metadata_mapping <- metadata_mapping[which(tolower(metadata_mapping$ENV_BIOME) == EMP_EXCLUDE),]
+#metadata_mapping <- metadata_mapping[which(tolower(metadata_mapping$ENV_BIOME) == EMP_EXCLUDE),]
 
 # table of total abundances for each unique metadata feature studied
 metadata_abundances <- sum_table_by_metadata(otu_table(otu_data), METADATA_CAT)

@@ -33,25 +33,25 @@ LOG_FILE            <- paste(RESULTS_DIR, "ssunique.log", sep = "")
 CLEANUP             <- FALSE
 TAX_RANK            <- "Order"
 ABUNDANCE_THRESHOLD <- 1 # exclude OTUs that sum below this threshold - useful for very large datasets
-METADATA_CAT        <- "all"#"pH_FineRange"#"pH_LargeRange"#"Site_ID"#"Land_Use_Type"#"Depth_cm" #"HMPbodysubsite" #"all" #"ENV_FEATURE"
+METADATA_CAT        <- "SOURCE"#"pH_FineRange"#"pH_LargeRange"#"Site_ID"#"Land_Use_Type"#"Depth_cm" #"HMPbodysubsite" #"all" #"ENV_FEATURE"
 BIOM                <- "TRUE"
 
 # program paths
-FASTTREE            <- '/usr/local/bin/FastTreeMP'
+FASTTREE            <- 'FastTree'
 PPLACER             <- 'pplacer'
-CMALIGN             <- '/Winnebago/mike/_bioinformatics_tools/cmalign'
-ESL_ALIMERGE        <- '/Winnebago/mike/_bioinformatics_tools/esl-alimerge'
-RAXML               <- '/home/mdjlynch/bioinformatics_tools/misc_tools/bin/raxmlHPC-PTHREADS-SSE3'
-SSU_ALIGN           <- '/usr/local/bin/ssu-align'
+CMALIGN             <- 'cmalign'
+ESL_ALIMERGE        <- 'esl-alimerge'
+RAXML               <- 'raxmlHPC-PTHREADS-SSE3'
+SSU_ALIGN           <- 'ssu-align'
 
 # program arguments
 RAXML_PARAMS        <- '/home/mdjlynch/Research/PostDoc/working/SSUnique/standards/ssunique_standards/RAxML_binaryModelParameters.LTP90ucPARAMS'
 
 # reference standards
-REF_ALIGNMENT       <- "/Winnebago/mike/_working/ssunique/ref_data/LTPs119_SSU.cmalign.stk"
+REF_ALIGNMENT       <- "ref_data/LTPs119_SSU.cmalign.stk"
 REF_NOVEL_TREE      <- paste(RESULTS_DIR, "reference_plus_novel.tre", sep = "")
-PPLACER_REFPKG      <- '/home/mdjlynch/Research/PostDoc/working/SSUnique/standards/ssunique_standards/LTP90ucSSUnique.refpkg'
-CMALIGN_MODEL       <- '/Winnebago/mike/_working/ssunique/ref_data/bacteria-0p1.infernal.cm'
+PPLACER_REFPKG      <- 'standards/LTP90ucSSUnique.refpkg'
+CMALIGN_MODEL       <- 'ref_data/SSU_rRNA_bacteria.cm'
 EPA_TREE            <- 'RAxML_labelledTree.ref_plus_novel'
 CLEAN_EPA_TREE      <- 'RAxML_labelledTree.ref_plus_novel.newick' #likely don't need
 
