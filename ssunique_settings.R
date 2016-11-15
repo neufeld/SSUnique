@@ -3,13 +3,14 @@
 #####################
 # REQUIRED PACKAGES #
 #####################
-library(optparse)
-library(ape)
-library(biom)
-library(phyloseq)
-library(ggplot2)
-library(Biostrings)
-library(reshape) # Needed?
+
+# CRAN packages, R >= 3.1 (ggplot2)
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(optparse, ape, biom, ggplot2, reshape)
+
+# Bioconductor packages, R >= 3.2 (phyloseq)
+# Must have Bioconductor installed, see: https://www.bioconductor.org/install/
+pacman::p_load(Biostrings, phyloseq)
 
 #########################
 # LOAD SSUnique SOURCES #
@@ -33,34 +34,25 @@ LOG_FILE            <- paste(RESULTS_DIR, "ssunique.log", sep = "")
 CLEANUP             <- FALSE
 TAX_RANK            <- "Order"
 ABUNDANCE_THRESHOLD <- 1 # exclude OTUs that sum below this threshold - useful for very large datasets
-METADATA_CAT        <- "SOURCE"#"pH_FineRange"#"pH_LargeRange"#"Site_ID"#"Land_Use_Type"#"Depth_cm" #"HMPbodysubsite" #"all" #"ENV_FEATURE"
+METADATA_CAT        <- "SOURCE" #e.g., "HMPbodysubsite", "all", "ENV_FEATURE"
 BIOM                <- "TRUE"
 
 # program paths
 FASTTREE            <- 'FastTree'
-PPLACER             <- 'pplacer'
 CMALIGN             <- 'cmalign'
 ESL_ALIMERGE        <- 'esl-alimerge'
-RAXML               <- 'raxmlHPC-PTHREADS-SSE3'
 SSU_ALIGN           <- 'ssu-align'
-
-# program arguments
-RAXML_PARAMS        <- '/home/mdjlynch/Research/PostDoc/working/SSUnique/standards/ssunique_standards/RAxML_binaryModelParameters.LTP90ucPARAMS'
 
 # reference standards
 REF_ALIGNMENT       <- "ref_data/LTPs119_SSU.cmalign.stk"
 REF_NOVEL_TREE      <- paste(RESULTS_DIR, "reference_plus_novel.tre", sep = "")
-PPLACER_REFPKG      <- 'standards/LTP90ucSSUnique.refpkg'
 CMALIGN_MODEL       <- 'ref_data/SSU_rRNA_bacteria.cm'
-EPA_TREE            <- 'RAxML_labelledTree.ref_plus_novel'
-CLEAN_EPA_TREE      <- 'RAxML_labelledTree.ref_plus_novel.newick' #likely don't need
 
 #SSUnique outputs
 PREFILTER_FASTA     <- paste(RESULTS_DIR, "prefiltered.fasta", sep = "")
 FILTERED_FASTA      <- paste(FILTER_DIR, "filter_results.bacteria.fa", sep = "")
 TMP_FASTA           <- paste(RESULTS_DIR, "tmp.fasta", sep = "")
 ALIGN_OUT           <- paste(RESULTS_DIR, "tmp.stk", sep = "")
-#MERGED_ALIGNMENT    <- paste(RESULTS_DIR, "merged.stk", sep = "")
 MERGED_ALIGNMENT    <- paste(RESULTS_DIR, "merged.afa", sep = "")
 NOVEL_FASTA         <- paste(RESULTS_DIR, "novel.fasta", sep = "")
 NOVEL_ALIGNMENT     <- paste(RESULTS_DIR, "novel.stk", sep = "")
